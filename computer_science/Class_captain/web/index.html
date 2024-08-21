@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Ranking System</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        input, button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Vote Ranking System</h2>
+    <form id="voteForm">
+        <div>
+            <input type="text" id="name1" placeholder="Enter name">
+            <input type="number" id="vote1" placeholder="Enter votes">
+        </div>
+        <div>
+            <input type="text" id="name2" placeholder="Enter name">
+            <input type="number" id="vote2" placeholder="Enter votes">
+        </div>
+        <div>
+            <input type="text" id="name3" placeholder="Enter name">
+            <input type="number" id="vote3" placeholder="Enter votes">
+        </div>
+        <div>
+            <input type="text" id="name4" placeholder="Enter name">
+            <input type="number" id="vote4" placeholder="Enter votes">
+        </div>
+        <button type="button" onclick="sortVotes()">Rank Votes</button>
+    </form>
+    <h3>Results:</h3>
+    <div id="results"></div>
+
+    <script>
+        function sortVotes() {
+            const results = document.getElementById('results');
+            results.innerHTML = ''; // Clear previous results
+
+            // Gather names and votes
+            let entries = [];
+            for (let i = 1; i <= 4; i++) {
+                let name = document.getElementById('name' + i).value;
+                let vote = parseInt(document.getElementById('vote' + i).value, 10);
+                entries.push({ name, vote });
+            }
+
+            // Sort by votes in descending order
+            entries.sort((a, b) => b.vote - a.vote);
+
+            // Display the results
+            entries.forEach((entry, index) => {
+                results.innerHTML += `<p>${index + 1}. ${entry.name} with ${entry.vote} votes</p>`;
+            });
+        }
+    </script>
+</body>
+</html>
