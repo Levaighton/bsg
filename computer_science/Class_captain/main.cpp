@@ -4,10 +4,13 @@
 using namespace std;
 
 int main() {
-    char nm[4];
+    int j;
+    cout << "how many students are there?" ;
+    cin >> j ;
+    char nm[j];
     int vt[4];
     int sv[4];
-    cout << "Input the four names" << endl;
+    cout << "Input the names" << endl;
     for (int i = 0; i < 4; i++) {
         cin >> nm[i];
     }
