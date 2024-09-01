@@ -1,0 +1,1 @@
+A barcode scanner reads dark and whit parallel lines. LED light is shined onto the code. White reflects the light back. The amount of light being shined back varies the width of each line. The width of each line get calculated intobinary values for data.
