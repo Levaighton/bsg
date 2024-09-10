@@ -1,3 +1,5 @@
-//
-// Created by Leighton Chen on 07/09/2024.
-//
+#ifdef TEST_MAIN
+int main() {
+    cout << "Hello World!" ;
+}
+#endif
